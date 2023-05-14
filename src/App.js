@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Random from "./component/Random"
+import Sidebar from "./component/Sidebar";
+import Feed from "./component/Feed";
+import Rightbar from "./component/Rightbar";
+import { Box, ThemeProvider, Container, Stack } from "@mui/material";
+import myTheme from "./theme";
+import Navbar from "./component/Navbar";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+    return (
+        <>
+            {/* <ThemeProvider theme={myTheme}>
+        <Random/>
+        </ThemeProvider> */}
+            <Box>
+                <Navbar />
+                <Stack direction="row" spacing={2} justifyContent="space-between" >
+                    <Sidebar />
+                    <Feed />
+                    <Rightbar />
+                </Stack>
+            </Box>
+
+        </>
+    )
+};
 
 export default App;
